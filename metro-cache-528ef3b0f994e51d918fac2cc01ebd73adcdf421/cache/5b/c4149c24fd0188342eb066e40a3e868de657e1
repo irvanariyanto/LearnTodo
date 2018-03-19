@@ -1,0 +1,14 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _reactNative = require(_dependencyMap[0]);
+
+  var _ThreeAxisSensor = require(_dependencyMap[1]);
+
+  var _ThreeAxisSensor2 = babelHelpers.interopRequireDefault(_ThreeAxisSensor);
+
+  var ExponentGyroscope = _reactNative.NativeModules.ExponentGyroscope;
+  exports.default = new _ThreeAxisSensor2.default(ExponentGyroscope, 'gyroscopeDidUpdate');
+});

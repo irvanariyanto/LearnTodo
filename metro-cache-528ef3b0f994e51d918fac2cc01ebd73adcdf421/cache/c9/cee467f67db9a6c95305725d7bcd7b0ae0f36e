@@ -1,0 +1,18 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  var castPath = require(_dependencyMap[0]),
+      toKey = require(_dependencyMap[1]);
+
+  function baseGet(object, path) {
+    path = castPath(path, object);
+    var index = 0,
+        length = path.length;
+
+    while (object != null && index < length) {
+      object = object[toKey(path[index++])];
+    }
+
+    return index && index == length ? object : undefined;
+  }
+
+  module.exports = baseGet;
+});

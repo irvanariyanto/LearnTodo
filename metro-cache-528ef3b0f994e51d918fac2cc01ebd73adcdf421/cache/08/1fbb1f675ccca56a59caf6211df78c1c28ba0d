@@ -1,0 +1,18 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _reactNative = require(_dependencyMap[0]);
+
+  var BarCodeScannerManager = _reactNative.NativeModules.ExponentBarCodeScannerModule;
+  var BarCodeScannerImplementation = void 0;
+
+  if (BarCodeScannerManager) {
+    BarCodeScannerImplementation = require(_dependencyMap[1]).default;
+  } else {
+    BarCodeScannerImplementation = require(_dependencyMap[2]).default;
+  }
+
+  exports.default = BarCodeScannerImplementation;
+});

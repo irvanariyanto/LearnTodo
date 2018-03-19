@@ -1,0 +1,29 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var AnimatedImplementation = require(_dependencyMap[0]);
+
+  var Image = require(_dependencyMap[1]);
+
+  var Text = require(_dependencyMap[2]);
+
+  var View = require(_dependencyMap[3]);
+
+  var AnimatedScrollView = void 0;
+  var Animated = {
+    View: AnimatedImplementation.createAnimatedComponent(View),
+    Text: AnimatedImplementation.createAnimatedComponent(Text),
+    Image: AnimatedImplementation.createAnimatedComponent(Image),
+
+    get ScrollView() {
+      if (!AnimatedScrollView) {
+        AnimatedScrollView = AnimatedImplementation.createAnimatedComponent(require(_dependencyMap[4]));
+      }
+
+      return AnimatedScrollView;
+    }
+
+  };
+  babelHelpers.extends(Animated, AnimatedImplementation);
+  module.exports = Animated;
+});

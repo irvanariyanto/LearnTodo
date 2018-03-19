@@ -1,0 +1,266 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  require(_dependencyMap[0]);
+
+  require(_dependencyMap[1]);
+
+  require(_dependencyMap[2]);
+
+  var _reactNative = require(_dependencyMap[3]);
+
+  var _Constants = require(_dependencyMap[4]);
+
+  var _Constants2 = babelHelpers.interopRequireDefault(_Constants);
+
+  if (typeof _Constants2.default.manifest.env === 'object') {
+    babelHelpers.extends(process.env, _Constants2.default.manifest.env);
+  }
+
+  module.exports = {
+    get Crypto() {
+      return _reactNative.NativeModules.ExponentCrypto;
+    },
+
+    get Fabric() {
+      return _reactNative.NativeModules.ExponentFabric;
+    },
+
+    get ImageCropper() {
+      return _reactNative.NativeModules.ExponentImageCropper;
+    },
+
+    get apisAreAvailable() {
+      return require(_dependencyMap[5]).default;
+    },
+
+    get registerRootComponent() {
+      return require(_dependencyMap[6]).default;
+    },
+
+    get takeSnapshotAsync() {
+      return require(_dependencyMap[7]).default;
+    },
+
+    get Accelerometer() {
+      return require(_dependencyMap[8]).default;
+    },
+
+    get Asset() {
+      return require(_dependencyMap[9]).default;
+    },
+
+    get AuthSession() {
+      return require(_dependencyMap[10]).default;
+    },
+
+    get ErrorRecovery() {
+      return require(_dependencyMap[11]).default;
+    },
+
+    get GLView() {
+      return require(_dependencyMap[12]).default;
+    },
+
+    get Gyroscope() {
+      return require(_dependencyMap[13]).default;
+    },
+
+    get Magnetometer() {
+      return require(_dependencyMap[14]).default;
+    },
+
+    get MagnetometerUncalibrated() {
+      return require(_dependencyMap[15]).default;
+    },
+
+    get Notifications() {
+      return require(_dependencyMap[16]).default;
+    },
+
+    get SQLite() {
+      return require(_dependencyMap[17]).default;
+    },
+
+    get AdMobBanner() {
+      return require(_dependencyMap[18]).default;
+    },
+
+    get PublisherBanner() {
+      return require(_dependencyMap[19]).default;
+    },
+
+    get AdMobInterstitial() {
+      return require(_dependencyMap[20]);
+    },
+
+    get AdMobRewarded() {
+      return require(_dependencyMap[21]);
+    },
+
+    get AppLoading() {
+      return require(_dependencyMap[22]).default;
+    },
+
+    get BarCodeScanner() {
+      return require(_dependencyMap[23]).default;
+    },
+
+    get BlurView() {
+      return require(_dependencyMap[24]).default;
+    },
+
+    get Camera() {
+      return require(_dependencyMap[25]).default;
+    },
+
+    get FaceDetector() {
+      return require(_dependencyMap[26]).default;
+    },
+
+    get KeepAwake() {
+      return require(_dependencyMap[27]).default;
+    },
+
+    get LinearGradient() {
+      return require(_dependencyMap[28]).default;
+    },
+
+    get MapView() {
+      return require(_dependencyMap[29]);
+    },
+
+    get Modal() {
+      return require(_dependencyMap[30]).default;
+    },
+
+    get Video() {
+      return require(_dependencyMap[31]).default;
+    },
+
+    get WebBrowser() {
+      return require(_dependencyMap[32]).default;
+    },
+
+    get Svg() {
+      return require(_dependencyMap[33]).default;
+    },
+
+    get Fingerprint() {
+      return require(_dependencyMap[34]);
+    },
+
+    get Amplitude() {
+      return require(_dependencyMap[35]).default;
+    },
+
+    get Audio() {
+      return require(_dependencyMap[36]);
+    },
+
+    get Brightness() {
+      return require(_dependencyMap[37]);
+    },
+
+    get Calendar() {
+      return require(_dependencyMap[38]);
+    },
+
+    get Constants() {
+      return require(_dependencyMap[4]).default;
+    },
+
+    get Contacts() {
+      return require(_dependencyMap[39]);
+    },
+
+    get DangerZone() {
+      return require(_dependencyMap[40]);
+    },
+
+    get DocumentPicker() {
+      return require(_dependencyMap[41]);
+    },
+
+    get FileSystem() {
+      return require(_dependencyMap[42]);
+    },
+
+    get Font() {
+      return require(_dependencyMap[43]);
+    },
+
+    get Google() {
+      return require(_dependencyMap[44]);
+    },
+
+    get Icon() {
+      return require(_dependencyMap[45]).default;
+    },
+
+    get ImageManipulator() {
+      return require(_dependencyMap[46]);
+    },
+
+    get ImagePicker() {
+      return require(_dependencyMap[47]);
+    },
+
+    get Location() {
+      return require(_dependencyMap[2]).default;
+    },
+
+    get Logs() {
+      return require(_dependencyMap[48]).default;
+    },
+
+    get MailComposer() {
+      return require(_dependencyMap[49]);
+    },
+
+    get Pedometer() {
+      return require(_dependencyMap[50]);
+    },
+
+    get Permissions() {
+      return require(_dependencyMap[51]);
+    },
+
+    get Facebook() {
+      return require(_dependencyMap[52]).default;
+    },
+
+    get FacebookAds() {
+      return require(_dependencyMap[53]);
+    },
+
+    get IntentLauncherAndroid() {
+      return require(_dependencyMap[54]);
+    },
+
+    get ScreenOrientation() {
+      return require(_dependencyMap[55]);
+    },
+
+    get SecureStore() {
+      return require(_dependencyMap[56]);
+    },
+
+    get Segment() {
+      return require(_dependencyMap[57]).default;
+    },
+
+    get Speech() {
+      return require(_dependencyMap[58]);
+    },
+
+    get Util() {
+      return require(_dependencyMap[59]);
+    }
+
+  };
+
+  if (global) {
+    global.__exponent = module.exports;
+    global.__expo = module.exports;
+    global.Expo = module.exports;
+  }
+});

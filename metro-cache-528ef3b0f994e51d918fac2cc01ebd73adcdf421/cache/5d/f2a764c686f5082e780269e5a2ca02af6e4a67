@@ -17,6 +17,10 @@ __d(function (global, require, module, exports, _dependencyMap) {
 
   var _reactNative = require(_dependencyMap[2], "react-native");
 
+  var _note = require(_dependencyMap[3], "./note");
+
+  var _note2 = _interopRequireDefault(_note);
+
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47,22 +51,44 @@ __d(function (global, require, module, exports, _dependencyMap) {
   var Main = _wrapComponent("Main")(function (_React$Component) {
     _inherits(Main, _React$Component);
 
-    function Main() {
+    function Main(props) {
       _classCallCheck(this, Main);
 
-      return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+      var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+
+      _this.state = {
+        noteArray: [],
+        noteText: ''
+      };
+      return _this;
     }
 
     _createClass(Main, [{
       key: "render",
       value: function render() {
+        var _this2 = this;
+
+        var notes = this.state.noteArray.map(function (val, key) {
+          return _react3.default.createElement(_note2.default, {
+            key: key,
+            keyval: key,
+            val: val,
+            deleteMethod: function deleteMethod() {
+              return _this2.deleteNote(key);
+            },
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 18
+            }
+          });
+        });
         return _react3.default.createElement(
           _reactNative.View,
           {
             style: styles.container,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 7
+              lineNumber: 22
             }
           },
           _react3.default.createElement(
@@ -71,7 +97,7 @@ __d(function (global, require, module, exports, _dependencyMap) {
               style: styles.header,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 8
+                lineNumber: 23
               }
             },
             _react3.default.createElement(
@@ -80,35 +106,44 @@ __d(function (global, require, module, exports, _dependencyMap) {
                 style: styles.textHeader,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 9
+                  lineNumber: 24
                 }
               },
               " -Note- "
             )
           ),
-          _react3.default.createElement(_reactNative.ScrollView, {
-            style: styles.scrollContriner,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 11
-            }
-          }),
+          _react3.default.createElement(
+            _reactNative.ScrollView,
+            {
+              style: styles.scrollContriner,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 26
+              }
+            },
+            notes
+          ),
           _react3.default.createElement(
             _reactNative.View,
             {
               style: styles.footer,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 14
+                lineNumber: 29
               }
             },
             _react3.default.createElement(_reactNative.TextInput, {
+              onChangeText: function onChangeText(noteText) {
+                return _this2.setState({
+                  noteText: noteText
+                });
+              },
               style: styles.textInput,
               placeholder: "Write note here",
               placeholderTextColor: "white",
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 15
+                lineNumber: 30
               }
             })
           ),
@@ -116,20 +151,50 @@ __d(function (global, require, module, exports, _dependencyMap) {
             _reactNative.TouchableOpacity,
             {
               style: styles.addButton,
+              onPress: this.addNote.bind(this),
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 19
+                lineNumber: 36
               }
             },
-            _react3.default.createElement(_reactNative.Text, {
-              style: styles.addButtonText,
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 20
-              }
-            })
+            _react3.default.createElement(
+              _reactNative.Text,
+              {
+                style: styles.addButtonText,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 37
+                }
+              },
+              "+"
+            )
           )
         );
+      }
+    }, {
+      key: "addNote",
+      value: function addNote() {
+        if (this.state.noteArray) {
+          var d = new Date();
+          this.state.noteArray.push({
+            'date': d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate(),
+            'note': this.state.noteText
+          });
+          this.setState({
+            noteArray: this.state.noteArray
+          });
+          this.setState({
+            noteText: ''
+          });
+        }
+      }
+    }, {
+      key: "deleteNote",
+      value: function deleteNote(key) {
+        this.state.noteArray.splice(key, 1);
+        this.setState({
+          noteArray: this.state.noteArray
+        });
       }
     }]);
 
@@ -167,12 +232,28 @@ __d(function (global, require, module, exports, _dependencyMap) {
       zIndex: 10
     },
     textInput: {
-      alignSlef: 'stretch',
+      alignSelf: 'stretch',
       color: '#fff',
       padding: 30,
       backgroundColor: '#252525',
       borderTopWidth: 2,
       borderTopColor: '#ededed'
+    },
+    addButton: {
+      position: 'absolute',
+      zIndex: 11,
+      right: 10,
+      bottom: 90,
+      backgroundColor: '#E91E63',
+      width: 50,
+      height: 50,
+      borderRadius: 50,
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    addButtonText: {
+      color: 'white',
+      fontSize: 24
     }
   });
 });

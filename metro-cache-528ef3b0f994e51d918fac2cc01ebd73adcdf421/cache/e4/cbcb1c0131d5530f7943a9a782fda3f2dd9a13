@@ -1,0 +1,36 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.hasHardwareAsync = hasHardwareAsync;
+  exports.isEnrolledAsync = isEnrolledAsync;
+  exports.authenticateAsync = authenticateAsync;
+  exports.cancelAuthenticate = cancelAuthenticate;
+
+  var _invariant = require(_dependencyMap[0]);
+
+  var _invariant2 = babelHelpers.interopRequireDefault(_invariant);
+
+  var _reactNative = require(_dependencyMap[1]);
+
+  var ExponentFingerprint = _reactNative.NativeModules.ExponentFingerprint;
+
+  function hasHardwareAsync() {
+    return ExponentFingerprint.hasHardwareAsync();
+  }
+
+  function isEnrolledAsync() {
+    return ExponentFingerprint.isEnrolledAsync();
+  }
+
+  function authenticateAsync() {
+    var promptMessageIOS = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Authenticate';
+    {
+      return ExponentFingerprint.authenticateAsync();
+    }
+  }
+
+  function cancelAuthenticate() {
+    ExponentFingerprint.cancelAuthenticate();
+  }
+});

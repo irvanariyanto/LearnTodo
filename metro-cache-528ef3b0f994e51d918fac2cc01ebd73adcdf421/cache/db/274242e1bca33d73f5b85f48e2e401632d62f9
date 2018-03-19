@@ -1,0 +1,60 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  module.exports = {
+    get Entypo() {
+      return require(_dependencyMap[0]).default;
+    },
+
+    get EvilIcons() {
+      return require(_dependencyMap[1]).default;
+    },
+
+    get Feather() {
+      return require(_dependencyMap[2]).default;
+    },
+
+    get FontAwesome() {
+      return require(_dependencyMap[3]).default;
+    },
+
+    get Foundation() {
+      return require(_dependencyMap[4]).default;
+    },
+
+    get Ionicons() {
+      return require(_dependencyMap[5]).default;
+    },
+
+    get MaterialCommunityIcons() {
+      return require(_dependencyMap[6]).default;
+    },
+
+    get MaterialIcons() {
+      return require(_dependencyMap[7]).default;
+    },
+
+    get Octicons() {
+      return require(_dependencyMap[8]).default;
+    },
+
+    get SimpleLineIcons() {
+      return require(_dependencyMap[9]).default;
+    },
+
+    get Zocial() {
+      return require(_dependencyMap[10]).default;
+    },
+
+    get createIconSet() {
+      return require(_dependencyMap[11]).default;
+    },
+
+    get createIconSetFromFontello() {
+      return require(_dependencyMap[12]).default;
+    },
+
+    get createIconSetFromIcoMoon() {
+      return require(_dependencyMap[13]).default;
+    }
+
+  };
+});

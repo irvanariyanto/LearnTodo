@@ -1,0 +1,56 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var AppContainer = require(_dependencyMap[0]);
+
+  var React = require(_dependencyMap[1]);
+
+  var ReactNative = require(_dependencyMap[2]);
+
+  var invariant = require(_dependencyMap[3]);
+
+  require(_dependencyMap[4]);
+
+  function renderApplication(RootComponent, initialProps, rootTag, WrapperComponent) {
+    invariant(rootTag, 'Expect to have a valid rootTag, instead got ', rootTag);
+    var renderable = React.createElement(
+      AppContainer,
+      {
+        rootTag: rootTag,
+        WrapperComponent: WrapperComponent
+      },
+      React.createElement(RootComponent, babelHelpers.extends({}, initialProps, {
+        rootTag: rootTag
+      }))
+    );
+
+    if (RootComponent.prototype != null && RootComponent.prototype.unstable_isAsyncReactComponent === true) {
+      var AppContainerAsyncWrapper = function (_React$unstable_Async) {
+        babelHelpers.inherits(AppContainerAsyncWrapper, _React$unstable_Async);
+
+        function AppContainerAsyncWrapper() {
+          babelHelpers.classCallCheck(this, AppContainerAsyncWrapper);
+          return babelHelpers.possibleConstructorReturn(this, (AppContainerAsyncWrapper.__proto__ || Object.getPrototypeOf(AppContainerAsyncWrapper)).apply(this, arguments));
+        }
+
+        babelHelpers.createClass(AppContainerAsyncWrapper, [{
+          key: "render",
+          value: function render() {
+            return this.props.children;
+          }
+        }]);
+        return AppContainerAsyncWrapper;
+      }(React.unstable_AsyncComponent);
+
+      renderable = React.createElement(
+        AppContainerAsyncWrapper,
+        null,
+        renderable
+      );
+    }
+
+    ReactNative.render(renderable, rootTag);
+  }
+
+  module.exports = renderApplication;
+});

@@ -1,0 +1,401 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var invariant = require(_dependencyMap[0]);
+
+  var ReactNative = {
+    get AccessibilityInfo() {
+      return require(_dependencyMap[1]);
+    },
+
+    get ActivityIndicator() {
+      return require(_dependencyMap[2]);
+    },
+
+    get ART() {
+      return require(_dependencyMap[3]);
+    },
+
+    get Button() {
+      return require(_dependencyMap[4]);
+    },
+
+    get CheckBox() {
+      return require(_dependencyMap[5]);
+    },
+
+    get DatePickerIOS() {
+      return require(_dependencyMap[6]);
+    },
+
+    get DrawerLayoutAndroid() {
+      return require(_dependencyMap[7]);
+    },
+
+    get FlatList() {
+      return require(_dependencyMap[8]);
+    },
+
+    get Image() {
+      return require(_dependencyMap[9]);
+    },
+
+    get ImageBackground() {
+      return require(_dependencyMap[10]);
+    },
+
+    get ImageEditor() {
+      return require(_dependencyMap[11]);
+    },
+
+    get ImageStore() {
+      return require(_dependencyMap[12]);
+    },
+
+    get KeyboardAvoidingView() {
+      return require(_dependencyMap[13]);
+    },
+
+    get ListView() {
+      return require(_dependencyMap[14]);
+    },
+
+    get MaskedViewIOS() {
+      return require(_dependencyMap[15]);
+    },
+
+    get Modal() {
+      return require(_dependencyMap[16]);
+    },
+
+    get NavigatorIOS() {
+      return require(_dependencyMap[17]);
+    },
+
+    get Picker() {
+      return require(_dependencyMap[18]);
+    },
+
+    get PickerIOS() {
+      return require(_dependencyMap[19]);
+    },
+
+    get ProgressBarAndroid() {
+      return require(_dependencyMap[20]);
+    },
+
+    get ProgressViewIOS() {
+      return require(_dependencyMap[21]);
+    },
+
+    get SafeAreaView() {
+      return require(_dependencyMap[22]);
+    },
+
+    get ScrollView() {
+      return require(_dependencyMap[23]);
+    },
+
+    get SectionList() {
+      return require(_dependencyMap[24]);
+    },
+
+    get SegmentedControlIOS() {
+      return require(_dependencyMap[25]);
+    },
+
+    get Slider() {
+      return require(_dependencyMap[26]);
+    },
+
+    get SnapshotViewIOS() {
+      return require(_dependencyMap[27]);
+    },
+
+    get Switch() {
+      return require(_dependencyMap[28]);
+    },
+
+    get RefreshControl() {
+      return require(_dependencyMap[29]);
+    },
+
+    get StatusBar() {
+      return require(_dependencyMap[30]);
+    },
+
+    get SwipeableFlatList() {
+      return require(_dependencyMap[31]);
+    },
+
+    get SwipeableListView() {
+      return require(_dependencyMap[32]);
+    },
+
+    get TabBarIOS() {
+      return require(_dependencyMap[33]);
+    },
+
+    get Text() {
+      return require(_dependencyMap[34]);
+    },
+
+    get TextInput() {
+      return require(_dependencyMap[35]);
+    },
+
+    get ToastAndroid() {
+      return require(_dependencyMap[36]);
+    },
+
+    get ToolbarAndroid() {
+      return require(_dependencyMap[37]);
+    },
+
+    get Touchable() {
+      return require(_dependencyMap[38]);
+    },
+
+    get TouchableHighlight() {
+      return require(_dependencyMap[39]);
+    },
+
+    get TouchableNativeFeedback() {
+      return require(_dependencyMap[40]);
+    },
+
+    get TouchableOpacity() {
+      return require(_dependencyMap[41]);
+    },
+
+    get TouchableWithoutFeedback() {
+      return require(_dependencyMap[42]);
+    },
+
+    get View() {
+      return require(_dependencyMap[43]);
+    },
+
+    get ViewPagerAndroid() {
+      return require(_dependencyMap[44]);
+    },
+
+    get VirtualizedList() {
+      return require(_dependencyMap[45]);
+    },
+
+    get WebView() {
+      return require(_dependencyMap[46]);
+    },
+
+    get ActionSheetIOS() {
+      return require(_dependencyMap[47]);
+    },
+
+    get Alert() {
+      return require(_dependencyMap[48]);
+    },
+
+    get AlertIOS() {
+      return require(_dependencyMap[49]);
+    },
+
+    get Animated() {
+      return require(_dependencyMap[50]);
+    },
+
+    get AppRegistry() {
+      return require(_dependencyMap[51]);
+    },
+
+    get AppState() {
+      return require(_dependencyMap[52]);
+    },
+
+    get AsyncStorage() {
+      return require(_dependencyMap[53]);
+    },
+
+    get BackAndroid() {
+      return require(_dependencyMap[54]);
+    },
+
+    get BackHandler() {
+      return require(_dependencyMap[55]);
+    },
+
+    get CameraRoll() {
+      return require(_dependencyMap[56]);
+    },
+
+    get Clipboard() {
+      return require(_dependencyMap[57]);
+    },
+
+    get DatePickerAndroid() {
+      return require(_dependencyMap[58]);
+    },
+
+    get DeviceInfo() {
+      return require(_dependencyMap[59]);
+    },
+
+    get Dimensions() {
+      return require(_dependencyMap[60]);
+    },
+
+    get Easing() {
+      return require(_dependencyMap[61]);
+    },
+
+    get findNodeHandle() {
+      return require(_dependencyMap[62]).findNodeHandle;
+    },
+
+    get I18nManager() {
+      return require(_dependencyMap[63]);
+    },
+
+    get ImagePickerIOS() {
+      return require(_dependencyMap[64]);
+    },
+
+    get InteractionManager() {
+      return require(_dependencyMap[65]);
+    },
+
+    get Keyboard() {
+      return require(_dependencyMap[66]);
+    },
+
+    get LayoutAnimation() {
+      return require(_dependencyMap[67]);
+    },
+
+    get Linking() {
+      return require(_dependencyMap[68]);
+    },
+
+    get NativeEventEmitter() {
+      return require(_dependencyMap[69]);
+    },
+
+    get NetInfo() {
+      return require(_dependencyMap[70]);
+    },
+
+    get PanResponder() {
+      return require(_dependencyMap[71]);
+    },
+
+    get PermissionsAndroid() {
+      return require(_dependencyMap[72]);
+    },
+
+    get PixelRatio() {
+      return require(_dependencyMap[73]);
+    },
+
+    get PushNotificationIOS() {
+      return require(_dependencyMap[74]);
+    },
+
+    get Settings() {
+      return require(_dependencyMap[75]);
+    },
+
+    get Share() {
+      return require(_dependencyMap[76]);
+    },
+
+    get StatusBarIOS() {
+      return require(_dependencyMap[77]);
+    },
+
+    get StyleSheet() {
+      return require(_dependencyMap[78]);
+    },
+
+    get Systrace() {
+      return require(_dependencyMap[79]);
+    },
+
+    get TimePickerAndroid() {
+      return require(_dependencyMap[80]);
+    },
+
+    get TVEventHandler() {
+      return require(_dependencyMap[81]);
+    },
+
+    get UIManager() {
+      return require(_dependencyMap[82]);
+    },
+
+    get unstable_batchedUpdates() {
+      return require(_dependencyMap[62]).unstable_batchedUpdates;
+    },
+
+    get Vibration() {
+      return require(_dependencyMap[83]);
+    },
+
+    get VibrationIOS() {
+      return require(_dependencyMap[84]);
+    },
+
+    get YellowBox() {
+      return require(_dependencyMap[85]);
+    },
+
+    get DeviceEventEmitter() {
+      return require(_dependencyMap[86]);
+    },
+
+    get NativeAppEventEmitter() {
+      return require(_dependencyMap[87]);
+    },
+
+    get NativeModules() {
+      return require(_dependencyMap[88]);
+    },
+
+    get Platform() {
+      return require(_dependencyMap[89]);
+    },
+
+    get processColor() {
+      return require(_dependencyMap[90]);
+    },
+
+    get requireNativeComponent() {
+      return require(_dependencyMap[91]);
+    },
+
+    get takeSnapshot() {
+      return require(_dependencyMap[92]);
+    },
+
+    get ColorPropType() {
+      return require(_dependencyMap[93]);
+    },
+
+    get EdgeInsetsPropType() {
+      return require(_dependencyMap[94]);
+    },
+
+    get PointPropType() {
+      return require(_dependencyMap[95]);
+    },
+
+    get ViewPropTypes() {
+      return require(_dependencyMap[96]);
+    },
+
+    get Navigator() {
+      invariant(false, "Navigator is deprecated and has been removed from this package. It can now be installed and imported from `react-native-deprecated-custom-components` instead of `react-native`. Learn about alternative navigation solutions at http://facebook.github.io/react-native/docs/navigation.html");
+    }
+
+  };
+  module.exports = ReactNative;
+});

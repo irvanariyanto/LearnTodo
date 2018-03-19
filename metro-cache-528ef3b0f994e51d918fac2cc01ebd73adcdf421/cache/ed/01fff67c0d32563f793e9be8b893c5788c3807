@@ -1,0 +1,24 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  module.exports = {
+    get withNativeAd() {
+      return require(_dependencyMap[0]).default;
+    },
+
+    get AdSettings() {
+      return require(_dependencyMap[1]).default;
+    },
+
+    get NativeAdsManager() {
+      return require(_dependencyMap[2]).default;
+    },
+
+    get InterstitialAdManager() {
+      return require(_dependencyMap[3]).default;
+    },
+
+    get BannerView() {
+      return require(_dependencyMap[4]).default;
+    }
+
+  };
+});

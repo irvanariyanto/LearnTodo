@@ -1,0 +1,44 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Constants = exports.default = undefined;
+
+  var _class, _temp;
+
+  var _reactNative = require(_dependencyMap[0]);
+
+  var faceDetectionDisabledMessage = 'Face detection has not been included in this build.';
+  var FaceDetectorModule = _reactNative.NativeModules.ExpoFaceDetector || {
+    stubbed: true,
+    Mode: {},
+    Landmarks: {},
+    Classifications: {},
+    detectFaces: function detectFaces() {
+      return new Promise(function (_, reject) {
+        return reject(faceDetectionDisabledMessage);
+      });
+    }
+  };
+  var FaceDetector = (_temp = _class = function () {
+    function FaceDetector() {
+      babelHelpers.classCallCheck(this, FaceDetector);
+    }
+
+    babelHelpers.createClass(FaceDetector, null, [{
+      key: "detectFacesAsync",
+      value: function detectFacesAsync(uri, options) {
+        return FaceDetectorModule.detectFaces(babelHelpers.extends({}, options, {
+          uri: uri
+        }));
+      }
+    }]);
+    return FaceDetector;
+  }(), _class.Constants = {
+    Mode: FaceDetectorModule.Mode,
+    Landmarks: FaceDetectorModule.Landmarks,
+    Classifications: FaceDetectorModule.Classifications
+  }, _temp);
+  exports.default = FaceDetector;
+  var Constants = exports.Constants = FaceDetector.Constants;
+});

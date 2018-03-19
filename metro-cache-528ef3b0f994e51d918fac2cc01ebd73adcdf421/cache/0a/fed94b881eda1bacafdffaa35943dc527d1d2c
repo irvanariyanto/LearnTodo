@@ -1,0 +1,33 @@
+__d(function (global, require, module, exports, _dependencyMap) {
+  'use strict';
+
+  var ColorPropType = require(_dependencyMap[0]);
+
+  var ImageResizeMode = require(_dependencyMap[1]);
+
+  var LayoutPropTypes = require(_dependencyMap[2]);
+
+  var ReactPropTypes = require(_dependencyMap[3]);
+
+  var ShadowPropTypesIOS = require(_dependencyMap[4]);
+
+  var TransformPropTypes = require(_dependencyMap[5]);
+
+  var ImageStylePropTypes = babelHelpers.extends({}, LayoutPropTypes, ShadowPropTypesIOS, TransformPropTypes, {
+    resizeMode: ReactPropTypes.oneOf(Object.keys(ImageResizeMode)),
+    backfaceVisibility: ReactPropTypes.oneOf(['visible', 'hidden']),
+    backgroundColor: ColorPropType,
+    borderColor: ColorPropType,
+    borderWidth: ReactPropTypes.number,
+    borderRadius: ReactPropTypes.number,
+    overflow: ReactPropTypes.oneOf(['visible', 'hidden']),
+    tintColor: ColorPropType,
+    opacity: ReactPropTypes.number,
+    overlayColor: ReactPropTypes.string,
+    borderTopLeftRadius: ReactPropTypes.number,
+    borderTopRightRadius: ReactPropTypes.number,
+    borderBottomLeftRadius: ReactPropTypes.number,
+    borderBottomRightRadius: ReactPropTypes.number
+  });
+  module.exports = ImageStylePropTypes;
+});
